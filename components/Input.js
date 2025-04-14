@@ -2,7 +2,16 @@ import { TextInput, StyleSheet, View } from "react-native";
 import Feather from "@expo/vector-icons/Feather";
 import { useState } from "react";
 
-const Input = ({ value, name, setValue, placeholder, type, multiline }) => {
+const Input = ({
+  value,
+  name,
+  setValue,
+  placeholder,
+  type,
+  multiline,
+  setDisplayMessage,
+  setIsInfosModified,
+}) => {
   const [visible, setVisible] = useState(true);
 
   return (
@@ -10,7 +19,16 @@ const Input = ({ value, name, setValue, placeholder, type, multiline }) => {
       <TextInput
         value={value}
         name={name}
-        onChangeText={(text) => setValue(text)}
+        onChangeText={(text) => {
+          setValue(text);
+          if (setDisplayMessage) {
+            setDisplayMessage(false);
+          }
+
+          if (setIsInfosModified) {
+            setIsInfosModified(true);
+          }
+        }}
         placeholder={placeholder}
         style={multiline ? styles.largeInput : styles.input}
         multiline={multiline && true}

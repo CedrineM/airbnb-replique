@@ -5,10 +5,10 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import axios from "axios";
 
 // import des composants necessaire
-import LogoTitle from "../../components/LogoTitle.js";
-import Input from "../../components/Input.js";
-import MainButton from "../../components/MainButton.js";
-// import { LogoTitle, Input, MainButton } from "../../components/index.js";
+// import LogoTitle from "../../components/LogoTitle.js";
+// import Input from "../../components/Input.js";
+// import MainButton from "../../components/MainButton.js";
+import { LogoTitle, Input, MainButton } from "../../components/index.js";
 
 // import context
 import AuthContext from "../../contexts/AuthContext.js";

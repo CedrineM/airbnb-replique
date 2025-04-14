@@ -5,17 +5,17 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import axios from "axios";
 
 // import des composants necessaire
-import LogoTitle from "../../components/LogoTitle.js";
-import Input from "../../components/Input.js";
-import MainButton from "../../components/MainButton.js";
-// import { LogoTitle, MainButton, Input } from "../../components/index.js";
+// import LogoTitle from "../../components/LogoTitle.js";
+// import Input from "../../components/Input.js";
+// import MainButton from "../../components/MainButton.js";
+import { LogoTitle, MainButton, Input } from "../../components/index.js";
 
 // import context
 import AuthContext from "../../contexts/AuthContext.js";
 
 export default LoginPage = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("Aza@mail.com");
+  const [password, setPassword] = useState("123");
   const [errorMessage, setErrorMessage] = useState("");
 
   const { login } = useContext(AuthContext);
@@ -31,7 +31,7 @@ export default LoginPage = () => {
         formData
       );
 
-      // console.log(response.data);
+      console.log(response.data);
       // alert("Congratulations, you are connected. 🎉");
       login(response.data.id, response.data.token);
       setErrorMessage("");
